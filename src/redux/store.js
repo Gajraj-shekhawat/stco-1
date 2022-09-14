@@ -5,8 +5,11 @@ import {
   applyMiddleware,
 } from "redux";
 import thunk from "redux-thunk";
+import { productReducer } from "./product/reducer";
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+    product:productReducer
+});
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
