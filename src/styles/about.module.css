@@ -1,0 +1,15 @@
+.conatiner {
+    text-align: justify;
+    font-size: 1.2rem;
+    width: 80%;
+    margin: auto;
+
+}
+
+.conatiner code {
+    float: right;
+    color: red;
+    padding:30px;
+    font-size: 3rem;
+    font-weight: 600;
+}

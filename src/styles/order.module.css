@@ -1,0 +1,19 @@
+.conatiner {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    gap: 100px
+}
+
+
+.singleBox {
+    width:500px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+    padding: 10px;
+}
+.overviewBox{
+    margin-top: 50px;
+}
