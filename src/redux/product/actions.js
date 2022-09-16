@@ -83,14 +83,15 @@ export const removeFromCart = (id) => (dispatch, store) => {
   setLocalStorage("cart", [...cart]);
 };
 
-export const updateQuantity = (el, quantity) => (dispatch, store) => {
+export const updateQuantity = (el, data,val) => (dispatch, store) => {
+  console.log('data:', data.quantity)
   const {
     product: { cart },
   } = store();
 
   const payload = cart.map((item) =>
-    item.id === +el.id ? { ...item, quantity } : item
+    item.id === +el.id ? { ...data,quantity:data.quantity+val } : item
   );
-  setLocalStorage("cart", [...payload]);
+  setLocalStorage("cart", payload);
   dispatch(cartUpdateQuantitySuccess(payload));
 };
