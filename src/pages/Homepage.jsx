@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Loader from "../components/Loader";
 import SingleProduct from "../components/SingleProduct";
 import { fetchProducts } from "../redux/product/actions";
 import styles from "../styles/homepage.module.css";
@@ -17,6 +18,13 @@ const Homepage = () => {
   useEffect(() => {
     dispatch(fetchProducts(category));
   }, [category, dispatch]);
+
+  if(isLoading){
+    return <Loader/>
+  }
+  if(isError){
+    return <h1>{errorMessage}</h1>
+  }
   return (
     <div className={styles.mainContainer}>
       <div className={styles.filterBox}>

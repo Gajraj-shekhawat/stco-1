@@ -32,6 +32,9 @@ export const productReducer = (state = initialState, { type, payload }) => {
     case cartActionsTypes.ADDTOCART: {
       return { ...state, cart: [...state.cart,payload] };
     }
+    case cartActionsTypes.REMOVEFROMCART: {
+      return { ...state, cart: [...state.cart.filter(el=>el.id==payload?false:true)] };
+    }
     default: {
       return state;
     }

@@ -9,4 +9,6 @@ export const categoriesActionsTypes = {
 };
 export const cartActionsTypes = {
   ADDTOCART: "ADDTOCART",
+  REMOVEFROMCART:"REMOVEFROMCART",
+  UPDATEQUANTITY:"UPDATEQUANTITY"
 };

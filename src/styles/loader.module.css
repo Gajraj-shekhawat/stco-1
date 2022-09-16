@@ -1,0 +1,22 @@
+.box {
+  width: 80px;
+  height: 80px;
+  border: 10px solid red;
+  border-top: 10px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  transform: translate(-50%);
+  position: absolute;
+  top: 30vh;
+  left: 50%;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

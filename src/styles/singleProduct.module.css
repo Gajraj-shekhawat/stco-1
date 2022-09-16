@@ -39,3 +39,12 @@
 .emptyStar {
     color: #ffb42e;
 }
+.cartButton>button {
+    width: 100%;
+    background-color: #fc5530;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 10px;
+}

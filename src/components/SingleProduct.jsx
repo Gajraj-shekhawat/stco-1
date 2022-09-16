@@ -1,19 +1,21 @@
 import React from "react";
 import styles from "../styles/singleProduct.module.css";
-import {useNavigate} from 'react-router-dom'
-
+import { useNavigate } from "react-router-dom";
 
 const SingleProduct = (el) => {
   const n = Math.round(el.rating.rate);
   const arr = new Array(n).fill(0);
   const newArr = new Array(5 - n).fill(0);
 
-  const navigate =useNavigate()
+  const navigate = useNavigate();
 
   return (
-    <div className={styles.containerBox} onClick={()=>{
-      navigate(`/product/${el.id}` ,{state:el})
-    }}>
+    <div
+      className={styles.containerBox}
+      onClick={() => {
+        navigate(`/product/${el.id}`, { state: el });
+      }}
+    >
       <div className={styles.imgBox}>
         <img src={el.image} alt="" />
       </div>
@@ -40,7 +42,6 @@ const SingleProduct = (el) => {
           <span className={styles.emptyStar}>({el.rating.count})</span>
         </div>
       </div>
- 
     </div>
   );
 };
