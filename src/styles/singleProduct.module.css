@@ -1,0 +1,40 @@
+.containerBox {
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.imgBox>img {
+    height: 150px;
+}
+
+.description {
+    height: 90px;
+    overflow-y: scroll;
+    margin: 3px 0 5px 0;
+    color: rgb(120, 136, 151);
+}
+
+.description::-webkit-scrollbar {
+    display: none;
+}
+
+.titleBox {
+    min-height: 50px;
+    font-size: 0.8rem;
+}
+
+.titleBox>div {
+    font-weight: 500;
+    color: rgb(175, 112, 29);
+}
+
+.priceBox {
+    color: #fc5530;
+}
+
+.emptyStar {
+    color: #ffb42e;
+}

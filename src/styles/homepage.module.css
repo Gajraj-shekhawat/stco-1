@@ -1,0 +1,70 @@
+.mainContainer {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.filterBox {
+    width: 20%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    position: sticky;
+    top: 40px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+   
+   
+}
+.filterBox input{
+    width: 1rem;
+    height: 1rem;
+   
+}
+.filterBox >div{
+    text-align: center;
+    margin-top: 20px;
+}
+.filterBox button{
+    font-size: 1.2rem;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding:  3px 8px;
+
+}
+.filterBox button:disabled{
+    background-color: rgb(141, 129, 129);
+}
+.productBox {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    width: 78%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 10px;
+    margin: auto;
+}
+
+
+/* medium */
+@media all and (min-width: 381px) and (max-width: 700px) {
+    .productBox {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      /* width: 100%; */
+    }
+  }
+  
+  /* small */
+  @media all and (min-width: 100px) and (max-width: 380px) {
+    .productBox {
+      grid-template-columns: repeat(1, 1fr);
+      width: 100%;
+    }
+    .filterBox{
+        display: none;
+    }
+  }

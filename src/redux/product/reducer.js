@@ -1,13 +1,36 @@
 import { getLocalStorage } from "../../utils/utlis";
+import { categoriesActionsTypes, productActionsTypes } from "./actionTypes";
 
 const initialState = {
   isLoading: false,
   isError: false,
   data: [],
   cart: getLocalStorage("cart") || [],
+  errorMessage: null,
+  categories: [],
 };
 
-
 export const productReducer = (state = initialState, { type, payload }) => {
-  return state;
+  switch (type) {
+    case productActionsTypes.REQUEST: {
+      return { ...state, isLoading: true, isError: false, errorMessage: null };
+    }
+    case productActionsTypes.SUCCESS: {
+      return { ...state, isLoading: false, data: payload };
+    }
+    case productActionsTypes.FAILURE: {
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+        errorMessage: payload,
+      };
+    }
+    case categoriesActionsTypes.SUCCESS: {
+      return { ...state, categories: payload };
+    }
+    default: {
+      return state;
+    }
+  }
 };
