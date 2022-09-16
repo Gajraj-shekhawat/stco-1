@@ -1,0 +1,67 @@
+.containerBox {
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.imgBox>img {
+    width: 400px;
+}
+
+.desBox {
+    width: 40%;
+
+}
+
+.description {
+    min-height: 90px;
+    margin: 3px 0 5px 0;
+    color: rgb(120, 136, 151);
+}
+
+
+.cartButton>button {
+    font-size: 1.5rem;
+    background-color: #fc5530;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.titleBox {
+    min-height: 50px;
+    font-size: 0.8rem;
+}
+
+.titleBox>div {
+    font-weight: 500;
+    color: rgb(175, 112, 29);
+}
+
+.priceBox {
+    color: #fc5530;
+}
+
+.emptyStar {
+    color: #ffb42e;
+}
+
+.quantity {
+    margin: 40px 0 20px 0;
+    font-size: 1.2rem;
+
+}
+
+.quantity>input {
+    outline: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}

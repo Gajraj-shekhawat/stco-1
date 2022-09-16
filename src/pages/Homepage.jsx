@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SingleProduct from "../components/SingleProduct";
-import { fetchCategories, fetchProducts } from "../redux/product/actions";
+import { fetchProducts } from "../redux/product/actions";
 import styles from "../styles/homepage.module.css";
 
 const Homepage = () => {

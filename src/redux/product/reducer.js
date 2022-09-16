@@ -1,5 +1,5 @@
 import { getLocalStorage } from "../../utils/utlis";
-import { categoriesActionsTypes, productActionsTypes } from "./actionTypes";
+import { cartActionsTypes, categoriesActionsTypes, productActionsTypes } from "./actionTypes";
 
 const initialState = {
   isLoading: false,
@@ -28,6 +28,9 @@ export const productReducer = (state = initialState, { type, payload }) => {
     }
     case categoriesActionsTypes.SUCCESS: {
       return { ...state, categories: payload };
+    }
+    case cartActionsTypes.ADDTOCART: {
+      return { ...state, cart: [...state.cart,payload] };
     }
     default: {
       return state;
