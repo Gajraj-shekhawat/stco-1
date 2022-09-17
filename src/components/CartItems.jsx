@@ -1,12 +1,11 @@
 import React from "react";
 import styles from "../styles/singleProduct.module.css";
-import { useNavigate } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import { removeFromCart, updateQuantity } from "../redux/product/actions";
 import { useState } from "react";
 
 const CartItems = (el) => {
-
   const n = Math.round(el.rating.rate);
   const arr = new Array(n).fill(0);
   const newArr = new Array(5 - n).fill(0);
@@ -16,11 +15,10 @@ const CartItems = (el) => {
   const handleClick = () => {
     dispatch(removeFromCart(el.id));
   };
-  const [data,setData]= useState(el)
-  // const [quantity, setQuantity] = useState(+el.quantity);
+  const [data, setData] = useState(el);
 
   const handleQuantity = (val) => {
-    dispatch(updateQuantity(el, data,val));
+    dispatch(updateQuantity(el, data, +val));
   };
   return (
     <div className={styles.containerBox}>
@@ -39,7 +37,7 @@ const CartItems = (el) => {
       </div>
       <div className={styles.ratingBox}>
         <div>
-          {arr.map((data, i) => (
+          {arr.map((_, i) => (
             <span className={styles.emptyStar} key={i}>
               &#9734;
             </span>
@@ -54,11 +52,10 @@ const CartItems = (el) => {
         <button
           disabled={data.quantity === 1}
           onClick={() => {
-            // setQuantity(prev=>prev-1)
-            setData({...data,quantity:data.quantity-1})
+           
+            setData({ ...data, quantity: +data.quantity - 1 });
 
-              handleQuantity(-1);
-            
+            handleQuantity(-1);
           }}
         >
           -
@@ -67,8 +64,8 @@ const CartItems = (el) => {
         <button
           disabled={data.quantity === 5}
           onClick={() => {
-            // setQuantity(quantity + 1);
-            setData({...data,quantity:data.quantity+1})
+            
+            setData({ ...data, quantity: +data.quantity + 1 });
             handleQuantity(+1);
           }}
         >

@@ -10,7 +10,7 @@ import styles from "../styles/homepage.module.css";
 const Homepage = () => {
   const dispatch = useDispatch();
 
-  const { data, isLoading, isError, cart, errorMessage, categories } =
+  const { data, isLoading, isError, errorMessage, categories } =
     useSelector((store) => store.product);
 
   const [category, setCategory] = useState(false);

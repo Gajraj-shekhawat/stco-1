@@ -1,5 +1,9 @@
 import { getLocalStorage } from "../../utils/utlis";
-import { cartActionsTypes, categoriesActionsTypes, productActionsTypes } from "./actionTypes";
+import {
+  cartActionsTypes,
+  categoriesActionsTypes,
+  productActionsTypes,
+} from "./actionTypes";
 
 const initialState = {
   isLoading: false,
@@ -30,10 +34,18 @@ export const productReducer = (state = initialState, { type, payload }) => {
       return { ...state, categories: payload };
     }
     case cartActionsTypes.ADDTOCART: {
-      return { ...state, cart: [...state.cart,payload] };
+      return { ...state, cart: [...state.cart, payload] };
     }
     case cartActionsTypes.REMOVEFROMCART: {
-      return { ...state, cart: [...state.cart.filter(el=>el.id==payload?false:true)] };
+      return {
+        ...state,
+        cart: [
+          ...state.cart.filter((el) => (+el.id === +payload ? false : true)),
+        ],
+      };
+    }
+    case cartActionsTypes.UPDATEQUANTITY: {
+      return { ...state, cart: [...payload] };
     }
     default: {
       return state;

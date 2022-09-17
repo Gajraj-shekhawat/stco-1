@@ -51,7 +51,7 @@ const Product = () => {
           Quantity :{" "}
           <input
             type="number"
-            min={1}
+            min={1}e
             max={5}
             value={quantity}
             onChange={(e) => {
