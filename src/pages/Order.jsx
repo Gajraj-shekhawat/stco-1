@@ -1,5 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { emptyCartAll } from "../redux/product/actions";
 import styles from "../styles/order.module.css";
 
 const Order = () => {
@@ -14,7 +16,10 @@ const Order = () => {
   let month = currentDate.getMonth() + 1;
   let year = currentDate.getFullYear();
 
+  const dispatch = useDispatch()
+const navigate= useNavigate()
   return (
+    <>
     <div className={styles.conatiner}>
       <div className={styles.items}>
         <h1>List of Products</h1>
@@ -39,6 +44,15 @@ const Order = () => {
         
       </div>
     </div>
+    <div style={{textAlign:"center",}}><button
+    onClick={()=>{
+      dispatch(emptyCartAll())
+      navigate('/')
+      
+    }}
+    style={{padding:"5px 10px"}}
+    >Go to home</button></div>
+    </>
   );
 };
 

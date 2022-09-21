@@ -24,6 +24,7 @@ const Checkout = () => {
         <button
           onClick={() => {
             navigate("/order");
+            
           }}
         >
           Make payment

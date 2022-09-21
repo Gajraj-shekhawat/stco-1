@@ -39,6 +39,10 @@ export const cartUpdateQuantitySuccess = (payload) => ({
   payload,
 });
 
+export const cartEmpty=()=>({
+  type:cartActionsTypes.EMPTYCART
+})
+
 const BASEURLAPI = "https://fakestoreapi.com/products";
 
 export const fetchProducts = (category) => async (dispatch) => {
@@ -94,3 +98,9 @@ export const updateQuantity = (el, data, val) => (dispatch, store) => {
   setLocalStorage("cart", payload);
   dispatch(cartUpdateQuantitySuccess(payload));
 };
+
+
+export const emptyCartAll=()=>dispatch=>{
+  localStorage.clear("cart")
+dispatch(cartEmpty())
+}

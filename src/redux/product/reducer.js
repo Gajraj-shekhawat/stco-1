@@ -47,6 +47,9 @@ export const productReducer = (state = initialState, { type, payload }) => {
     case cartActionsTypes.UPDATEQUANTITY: {
       return { ...state, cart: [...payload] };
     }
+    case cartActionsTypes.EMPTYCART: {
+      return { ...state, cart: [] };
+    }
     default: {
       return state;
     }
